@@ -22,7 +22,7 @@ import (
 	"go.etcd.io/etcd/pkg/v3/cobrautl"
 	"go.etcd.io/etcd/server/v3/datadir"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 const (

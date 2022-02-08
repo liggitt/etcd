@@ -44,8 +44,8 @@ import (
 	"go.uber.org/zap/zapgrpc"
 
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
+	"github.com/liggitt/cobra"
 	"github.com/soheilhy/cmux"
-	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"

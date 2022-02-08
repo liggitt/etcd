@@ -30,7 +30,7 @@ import (
 	"go.etcd.io/etcd/pkg/v3/cobrautl"
 	"go.etcd.io/etcd/pkg/v3/report"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"golang.org/x/time/rate"
 	"gopkg.in/cheggaaa/pb.v1"
 )

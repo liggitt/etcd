@@ -18,8 +18,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/spf13/cobra"
-	"go.etcd.io/etcd/client/v3"
+	"github.com/liggitt/cobra"
+	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/pkg/v3/cobrautl"
 )
 

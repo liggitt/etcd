@@ -26,7 +26,7 @@ import (
 	"go.etcd.io/etcd/pkg/v3/cobrautl"
 	"go.etcd.io/etcd/pkg/v3/flags"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"go.uber.org/zap"
 )
 

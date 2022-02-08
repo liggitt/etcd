@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	snapshot "go.etcd.io/etcd/client/v3/snapshot"
 	"go.etcd.io/etcd/etcdutl/v3/etcdutl"
 	"go.etcd.io/etcd/pkg/v3/cobrautl"

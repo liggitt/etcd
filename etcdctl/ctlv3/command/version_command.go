@@ -19,7 +19,7 @@ import (
 
 	"go.etcd.io/etcd/api/v3/version"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 // NewVersionCommand prints out the version of etcd.
