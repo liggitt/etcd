@@ -28,7 +28,7 @@ import (
 	"go.etcd.io/etcd/pkg/v3/report"
 	"go.etcd.io/etcd/server/v3/etcdserver/api/v3lock/v3lockpb"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"golang.org/x/time/rate"
 	"gopkg.in/cheggaaa/pb.v1"
 )

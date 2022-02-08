@@ -20,7 +20,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"go.etcd.io/etcd/api/v3/etcdserverpb"
 	"go.etcd.io/etcd/client/pkg/v3/fileutil"
 	"go.etcd.io/etcd/client/pkg/v3/types"

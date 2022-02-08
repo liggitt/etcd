@@ -23,7 +23,7 @@ import (
 
 	"go.etcd.io/etcd/client/v3"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

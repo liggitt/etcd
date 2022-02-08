@@ -25,7 +25,7 @@ import (
 	"go.etcd.io/etcd/pkg/v3/traceutil"
 	"go.etcd.io/etcd/server/v3/lease"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 // mvccPutCmd represents a storage put performance benchmarking tool
@@ -53,7 +53,7 @@ func init() {
 	mvccPutCmd.Flags().BoolVar(&txn, "txn", false, "put a key in transaction or not")
 	mvccPutCmd.Flags().IntVar(&nrTxnOps, "txn-ops", 1, "a number of keys to put per transaction")
 
-	// TODO: after the PR https://github.com/spf13/cobra/pull/220 is merged, the below pprof related flags should be moved to RootCmd
+	// TODO: after the PR https://github.com/liggitt/cobra/pull/220 is merged, the below pprof related flags should be moved to RootCmd
 	mvccPutCmd.Flags().StringVar(&cpuProfPath, "cpuprofile", "", "the path of file for storing cpu profile result")
 	mvccPutCmd.Flags().StringVar(&memProfPath, "memprofile", "", "the path of file for storing heap profile result")
 

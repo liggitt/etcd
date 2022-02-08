@@ -21,7 +21,7 @@ import (
 
 	"go.etcd.io/etcd/client/v3/concurrency"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 // NewElectionCommand returns the cobra command for "election runner".

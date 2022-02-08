@@ -22,7 +22,7 @@ import (
 
 	"go.etcd.io/etcd/client/v3/concurrency"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 // NewLockRacerCommand returns the cobra command for "lock-racer runner".

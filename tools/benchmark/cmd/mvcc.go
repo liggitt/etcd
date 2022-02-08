@@ -24,7 +24,7 @@ import (
 	"go.etcd.io/etcd/server/v3/mvcc"
 	"go.etcd.io/etcd/server/v3/mvcc/backend"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 )
 
 var (

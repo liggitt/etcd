@@ -23,7 +23,7 @@ import (
 
 	"go.etcd.io/etcd/server/v3/proxy/tcpproxy"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"go.uber.org/zap"
 )
 

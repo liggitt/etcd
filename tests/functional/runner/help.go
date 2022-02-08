@@ -27,7 +27,7 @@ import (
 
 	"go.etcd.io/etcd/api/v3/version"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"github.com/spf13/pflag"
 )
 

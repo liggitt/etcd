@@ -20,7 +20,7 @@ import (
 
 	"go.etcd.io/etcd/client/pkg/v3/transport"
 
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"gopkg.in/cheggaaa/pb.v1"
 )
 

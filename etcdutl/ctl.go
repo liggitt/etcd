@@ -16,7 +16,7 @@
 package main
 
 import (
-	"github.com/spf13/cobra"
+	"github.com/liggitt/cobra"
 	"go.etcd.io/etcd/etcdutl/v3/etcdutl"
 )
 

@@ -378,7 +378,7 @@
 		]
 	},
 	{
-		"project": "github.com/spf13/cobra",
+		"project": "github.com/liggitt/cobra",
 		"licenses": [
 			{
 				"type": "Apache License 2.0",
