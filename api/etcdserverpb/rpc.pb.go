@@ -12,7 +12,7 @@ import (
 
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/golang/protobuf/proto"
-	_ "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
+	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	authpb "go.etcd.io/etcd/api/v3/authpb"
 	mvccpb "go.etcd.io/etcd/api/v3/mvccpb"
 	_ "go.etcd.io/etcd/api/v3/versionpb"

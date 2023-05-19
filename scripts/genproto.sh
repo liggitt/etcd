@@ -20,10 +20,10 @@ if [[ $(protoc --version | cut -f2 -d' ') != "3.14.0" ]]; then
 fi
 
 GOFAST_BIN=$(tool_get_bin github.com/gogo/protobuf/protoc-gen-gofast)
-GRPC_GATEWAY_BIN=$(tool_get_bin github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway)
-SWAGGER_BIN=$(tool_get_bin github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger)
+GRPC_GATEWAY_BIN=$(tool_get_bin github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway)
+SWAGGER_BIN=$(tool_get_bin github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2)
 GOGOPROTO_ROOT="$(tool_pkg_dir github.com/gogo/protobuf/proto)/.."
-GRPC_GATEWAY_ROOT="$(tool_pkg_dir github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway)/.."
+GRPC_GATEWAY_ROOT="$(tool_pkg_dir github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway)/.."
 RAFT_ROOT="$(tool_pkg_dir go.etcd.io/raft/v3/raftpb)/.."
 
 echo
@@ -43,7 +43,7 @@ log_callout -e "\\nRunning gofast (gogo) proto generation..."
 
 for dir in ${DIRS}; do
   run pushd "${dir}"
-    run protoc --gofast_out=plugins=grpc:. -I=".:${GOGOPROTO_PATH}:${ETCD_ROOT_DIR}/..:${RAFT_ROOT}:${ETCD_ROOT_DIR}:${GRPC_GATEWAY_ROOT}/third_party/googleapis" \
+    run protoc --gofast_out=plugins=grpc:. -I=".:${GOGOPROTO_PATH}:${ETCD_ROOT_DIR}/..:${RAFT_ROOT}:${ETCD_ROOT_DIR}:${ETCD_ROOT_DIR}/third_party/googleapis" \
       -I"${GRPC_GATEWAY_ROOT}" \
       --plugin="${GOFAST_BIN}" ./**/*.proto
 
@@ -64,7 +64,7 @@ rm -rf Documentation/dev-guide/apispec/swagger/*json
 for pb in api/etcdserverpb/rpc server/etcdserver/api/v3lock/v3lockpb/v3lock server/etcdserver/api/v3election/v3electionpb/v3election; do
   log_callout "grpc & swagger for: ${pb}.proto"
   run protoc -I. \
-      -I"${GRPC_GATEWAY_ROOT}"/third_party/googleapis \
+      -I"${ETCD_ROOT_DIR}"/third_party/googleapis \
       -I"${GRPC_GATEWAY_ROOT}" \
       -I"${GOGOPROTO_PATH}" \
       -I"${ETCD_ROOT_DIR}/.." \

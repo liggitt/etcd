@@ -10,7 +10,7 @@ require (
 	github.com/gogo/protobuf v1.3.2
 	github.com/google/addlicense v1.1.1
 	github.com/gordonklaus/ineffassign v0.0.0-20210914165742-4cc7213b9bc8
-	github.com/grpc-ecosystem/grpc-gateway v1.16.0
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.0
 	github.com/gyuho/gocovmerge v0.0.0-20171205171859-50c7e6afd535
 	github.com/mdempsky/unconvert v0.0.0-20200228143138-95ecdbfc0b5f
 	github.com/mgechev/revive v1.3.1
@@ -18,6 +18,8 @@ require (
 	go.etcd.io/gofail v0.1.0
 	go.etcd.io/protodoc v0.0.0-20180829002748-484ab544e116
 	go.etcd.io/raft/v3 v3.0.0-20221201111702-eaa6808e1f7a
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.3.0
+	google.golang.org/protobuf v1.30.0
 	gotest.tools/gotestsum v1.10.0
 	gotest.tools/v3 v3.4.0
 	honnef.co/go/tools v0.4.3
@@ -42,7 +44,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/goccy/go-yaml v1.11.0 // indirect
-	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
+	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/certificate-transparency-go v1.1.4 // indirect
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510 // indirect
@@ -81,7 +83,6 @@ require (
 	golang.org/x/tools v0.8.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220609144429-65e65417b02f // indirect
 	google.golang.org/genproto v0.0.0-20220706185917-7780775163c4 // indirect
-	google.golang.org/protobuf v1.30.0 // indirect
 	gopkg.in/op/go-logging.v1 v1.0.0-20160211212156-b2cb9fa56473 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
