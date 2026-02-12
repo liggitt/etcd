@@ -44,7 +44,7 @@ type watcher struct {
 	// nextrev is the minimum expected next event revision.
 	nextrev int64
 	// lastHeader has the last header sent over the stream.
-	lastHeader pb.ResponseHeader
+	lastHeader *pb.ResponseHeader
 
 	// wps is the parent.
 	wps *watchProxyStream
@@ -56,12 +56,12 @@ func (w *watcher) send(wr clientv3.WatchResponse) {
 	if wr.IsProgressNotify() && !w.progress {
 		return
 	}
-	if w.nextrev > wr.Header.Revision && len(wr.Events) > 0 {
+	if w.nextrev > wr.Header.GetRevision() && len(wr.Events) > 0 {
 		return
 	}
 	if w.nextrev == 0 {
 		// current watch; expect updates following this revision
-		w.nextrev = wr.Header.Revision + 1
+		w.nextrev = wr.Header.GetRevision() + 1
 	}
 
 	events := make([]*mvccpb.Event, 0, len(wr.Events))
@@ -105,9 +105,13 @@ func (w *watcher) send(wr clientv3.WatchResponse) {
 		return
 	}
 
-	w.lastHeader = wr.Header
+	header := wr.Header
+	if header == nil {
+		header = &pb.ResponseHeader{}
+	}
+	w.lastHeader = header
 	w.post(&pb.WatchResponse{
-		Header:          &wr.Header,
+		Header:          header,
 		Created:         wr.Created,
 		CompactRevision: wr.CompactRevision,
 		Canceled:        wr.Canceled,
