@@ -780,7 +780,7 @@ func TestWatchableKVWatch(t *testing.T) {
 
 	wid, _ := w.Watch(t.Context(), 0, []byte("foo"), []byte("fop"), 0)
 
-	wev := []mvccpb.Event{
+	wev := []*mvccpb.Event{
 		{
 			Type: mvccpb.Event_PUT,
 			Kv: &mvccpb.KeyValue{
@@ -822,7 +822,7 @@ func TestWatchableKVWatch(t *testing.T) {
 		if resp.WatchID != wid {
 			t.Errorf("resp.WatchID got = %d, want = %d", resp.WatchID, wid)
 		}
-		ev := resp.Events[0]
+		ev := &resp.Events[0]
 		if !protoDeepEqual(t, ev, wev[0]) {
 			t.Errorf("watched event = %+v, want %+v", ev, wev[0])
 		}
@@ -837,7 +837,7 @@ func TestWatchableKVWatch(t *testing.T) {
 		if resp.WatchID != wid {
 			t.Errorf("resp.WatchID got = %d, want = %d", resp.WatchID, wid)
 		}
-		ev := resp.Events[0]
+		ev := &resp.Events[0]
 		if !protoDeepEqual(t, ev, wev[1]) {
 			t.Errorf("watched event = %+v, want %+v", ev, wev[1])
 		}
@@ -853,7 +853,7 @@ func TestWatchableKVWatch(t *testing.T) {
 		if resp.WatchID != wid {
 			t.Errorf("resp.WatchID got = %d, want = %d", resp.WatchID, wid)
 		}
-		ev := resp.Events[0]
+		ev := &resp.Events[0]
 		if !protoDeepEqual(t, ev, wev[1]) {
 			t.Errorf("watched event = %+v, want %+v", ev, wev[1])
 		}
@@ -867,7 +867,7 @@ func TestWatchableKVWatch(t *testing.T) {
 		if resp.WatchID != wid {
 			t.Errorf("resp.WatchID got = %d, want = %d", resp.WatchID, wid)
 		}
-		ev := resp.Events[0]
+		ev := &resp.Events[0]
 		if !protoDeepEqual(t, ev, wev[2]) {
 			t.Errorf("watched event = %+v, want %+v", ev, wev[2])
 		}
